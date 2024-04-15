@@ -1,0 +1,7 @@
+services:
+  python:
+    build: .
+    tty: true
+    volumes:
+      - ../python:/python
+    privileged: true
