@@ -1,104 +1,102 @@
-# Pythonの環境構築
+# Python
 
-## venvを使ったバージョンの切り替え
+## インストールの手順
 
-### Python 3.10系と3.11系を切り替える場合
+### ダウンロード
 
-Python 3.10系(3.10.11)のインストーラー
+下記サイトからPythonをダウンロードする  
+https://www.python.org/
 
-https://www.python.org/downloads/release/python-31011/
+`Downloads`をクリック
+![](images/001.png)
 
-Python 3.11系(3.11.9)のインストーラー
+`Python 3.xx.xx`をクリックする
+![](images/002.png)
 
-https://www.python.org/downloads/release/python-3119/
+`ダウンロード`フォルダに保存する
+![](images/003.png)
 
-### コマンドの説明
+### インストール
 
-インストール済みのPython一覧表示
+ダウンロードしたファイルを実行  
+![](images/004.png)
 
-```bash
-py - 0
-```
+`Add python.exe to PATH`にチェックを入れて`Install Now`をクリック  
+![](images/005.png)
 
-```bash
-py - 0
- -V:3.11 *        Python 3.11 (64-bit)
- -V:3.10          Python 3.10 (64-bit)
-```
+インストールされるので待つ  
+![](images/006.png)
 
-インストール済みのPython一覧表示(インストール先含む)
+`Close`をクリック  
+![](images/007.png)
 
-```bash
-py -0p
-```
 
-```bash
-py -0p
- -V:3.11 *        C:\Users\user\AppData\Local\Programs\Python\Python311\python.exe
- -V:3.10          C:\Users\user\AppData\Local\Programs\Python\Python310\python.exe
-```
+### インストールの確認
 
-バージョンを指定して仮想環境構築
+コマンドプロンプトから下記コマンドを実行して、インストールの確認をする  
+インストールしたPythonのバージョンが表示されたらOK
 
 ```bash
-py -3.10 -m venv VENV_NAME
-py -3.10 -m venv venv
+python -V
 ```
 
-### Python 3.10系で仮想環境構築有効化の流れ
+![](images/008.png)
 
-カレントフォルダ : C:\work
+## 別バージョンのPythonをインストールする
 
-仮想環境構築
+今回はVer3.10系をインストールする  
+※1台のPCに複数バージョンのPythonをインストールできる  
+※Pythonライブラリには、特定のバージョンでしか動かないモノもある
 
-```bash
-py -3.10 -m venv venv
-```
+### ダウンロード
 
-仮想環境有効化
+下記サイトからPython3.10系をダウンロードする  
+https://www.python.org/
 
-```bash
-venv\Scripts\activate
-```
+`Downloads`をクリック
+![](images/009.png)
 
-仮想環境有効化後の表示
+`View the full list of download.`をクリック
+![](images/010.png)
 
-```bash
-(venv) C:\work
-```
 
-仮想環境の無効化
+下にスクロールする
+![](images/011.png)
 
-```bash
-deactivate
-```
 
-仮想環境の削除
+`Looking for a specific release?`に過去のバージョンが用意されている  
+欲しいバージョンを探す
+![](images/013.png)
 
-venvフォルダを削除するだけ
+今回は`Python 3.10.11`をインストールするので探す
+![](images/014.png)
 
-## Dockerを使った環境構築
+見つけたら`Python 3.10.11`の`Download`をクリックする
+![](images/015.png)
 
-```bash
-cd docker-python
-docker compose up -d
-```
+下の方にスクロールする
+![](images/016.png)
 
-compose.yml
+`Files`にある`Windows installer (64-bit)`をクリックしてダウンロードする
+![](images/017.png)
 
-```yml
-services:
-  python:
-    build: .
-    tty: true
-    volumes:
-      - ../python:/python
-    privileged: true
-```
+`ダウンロード`フォルダに保存する
+![](images/018.png)
 
-Dockerfile
+### インストール
 
-```Dockerfile
-FROM python:3.10
-WORKDIR /python
-```
+ダウンロードしたファイルを実行
+![](images/019.png)
+
+今回は`Add python.exe to PATH`にチェックを入れないで`Install Now`をクリック  
+![](images/020.png)
+
+インストールされるので待つ  
+![](images/021.png)
+
+`Close`をクリック  
+![](images/022.png)
+
+### Pythonのバージョン切り替え
+
+[こちら](README-VENV.md)を参照
